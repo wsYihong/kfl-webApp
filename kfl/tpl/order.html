@@ -1,0 +1,30 @@
+<div ng-include="'tpl/header.html'"></div>
+<ion-content class="has-header has-footer">
+
+    <div class="list list-inset" ng-hide="successMsg">
+
+        <label class="item item-input">
+            <span class="input-label">联系人</span>
+            <input type="text" placeholder="请输入用户名"  ng-model="msg.user_name" >
+        </label>
+        <label class="item item-input">
+            <span class="input-label">联系电话</span>
+            <input type="text" placeholder="请输入联系电话" ng-model="msg.phone">
+        </label>
+
+        <label class="item item-input">
+            <span class="input-label">送餐地址</span>
+            <textarea  cols="30" rows="10" ng-model="msg.addr"></textarea>
+        </label>
+
+        <button class="button button-positive button-block" ng-click="sendClick()" >提交订单</button>
+    </div>
+
+    <div class="card " ng-show="successMsg">
+        <div class="item item-text-wrap">
+            {{ successMsg}}
+        </div>
+    </div>
+
+</ion-content>
+<div ng-include="'tpl/footer.html'"></div>

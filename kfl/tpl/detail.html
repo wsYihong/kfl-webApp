@@ -1,0 +1,26 @@
+<div ng-include="'tpl/header.html'"></div>
+<ion-content class="has-header has-footer">
+   <div class="card">
+           <div class="item item-divider">
+           <a href="#/start" >首页</a>
+            / 详情
+           </div>
+
+         <div class="list card" >
+            <h1>{{dList.name}}</h1>
+            <br/>
+        <div class="item item-body">
+            <img class="img-responsive" ng-src="img/{{dList.img_lg}}">
+            <p><b>主要材料：</b>{{dList.material}}</p>
+            <p>{{dList.detail}}</p>
+
+        </div>
+
+         <div class="item item-divider text-right">
+             <button class="button button-balanced button-small" ng-click="addCart()" >添加购物车</button>
+             <button class="button button-positive button-small" ng-click="jump('main')">我在看看</button>
+         </div>
+    </div>
+    </div>
+</ion-content>
+<div ng-include="'tpl/footer.html'"></div>

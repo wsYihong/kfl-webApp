@@ -1,0 +1,53 @@
+<div class="bar bar-header">
+    <div class="h1 title">购物车</div>
+    <button class="button button-clear button-positive" ng-click="show()">编辑</button>
+</div>
+
+<ion-content class="has-footer has-header">
+
+    <h2 class="text-center">我的购物车</h2>
+    <div ng-if="cartList.length >0">
+        <div class="list card">
+            <div class="item item-avatar" ng-repeat="cart in cartList">
+                <img ng-src="img/{{cart.img_sm}}" ng-click="jump('detail',{did:cart.did})">
+                <h2>{{cart.name}}</h2>
+                <p>{{cart.price}} x {{cart.dishCount}}</p>
+            </div>
+
+        </div>
+        <div class="list list-inset">
+            <div class="item text-right">
+                <span>合计：{{sumAll()}}</span>
+                <button class="button button-assertive button-small" ng-click="saveAndJump()">我要下单</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div ng-if="cartList.length == 0">
+        <button class="button button-block button-balanced" ng-click="jump('main')">买买买</button>
+    </div>
+</ion-content>
+
+<div ng-include="'tpl/footer.html'"></div>
+
+
+<script type="text/ng-template" id="revise.html">
+    <ion-modal-view>
+        <ion-content>
+            <div class="list list-inset">
+                <h1 class="text-center">修改信息</h1>
+                <div class="item item-avatar" ng-repeat="cart in cartList">
+                    <img ng-src="img/{{cart.img_sm}}" ng-click="jump('detail',{did:cart.did})">
+                    <h2>{{cart.name}}</h2>
+                    <div >
+                        <button ng-click="mClick($index)">-</button>
+                        <span>{{cart.dishCount}}</span>
+                        <button ng-click="aClick($index)">+</button>
+                    </div>
+                </div>
+                <button class="button  button-balanced button-block" ng-click="hide()">关闭</button>
+            </div>
+        </ion-content>
+    </ion-modal-view>
+</script>

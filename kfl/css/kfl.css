@@ -1,0 +1,21 @@
+#kflStart{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+#kflStart img{
+    width:50%;
+}
+
+#kflStart h1{
+    color:#007aff;
+    font-weight:bold;
+}
+
+.img-responsive{
+    display:block;
+    max-width:100%;
+    height:auto;
+}
